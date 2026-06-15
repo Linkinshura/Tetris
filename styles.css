@@ -1,38 +1,79 @@
-body {
-  margin: 0;
-  background: radial-gradient(circle at top, #1a1f35, #0b0f1a);
-  font-family: sans-serif;
-  color: white;
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #0d0d14;
+  --surface: #16161f;
+  --surface2: #1e1e2a;
+  --border: rgba(255,255,255,0.08);
+  --text: #e8e8f0;
+  --muted: #6b6b80;
+  --accent: #7c3aed;
+  --accent2: #a855f7;
+
+  --I: #22d3ee;
+  --O: #fbbf24;
+  --T: #a78bfa;
+  --S: #34d399;
+  --Z: #f87171;
+  --J: #60a5fa;
+  --L: #fb923c;
 }
 
-.game {
+html, body {
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 400px;
+  background: radial-gradient(ellipse, rgba(124,58,237,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+header {
   display: flex;
-  justify-content: center;
   align-items: center;
-  height: 100vh;
-  gap: 30px;
+  justify-content: space-between;
+  padding: 20px 32px;
+  border-bottom: 1px solid var(--border);
+  position: relative;
 }
 
-canvas {
-  background: #0a0d18;
-  border: 3px solid #2a2f4a;
-  border-radius: 12px;
-  box-shadow: 0 0 25px rgba(0,0,0,0.6);
+.logo {
+  font-family: 'Space Mono', monospace;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: var(--text);
 }
 
-.panel {
+.logo span {
+  color: var(--accent2);
+}
+
+.header-badge {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+main {
   display: flex;
-  flex-direction: column;
-  gap: 15px;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 24px;
+  padding: 40px 24px;
+  min-height: calc(100vh - 65px);
 }
 
-h3 {
-  margin: 5px 0;
-  text-align: center;
-}
-
-p {
-  margin: 0;
-  text-align: center;
-  font-size: 18px;
-}

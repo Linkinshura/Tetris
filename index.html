@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tetris</title>
-
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -16,15 +15,19 @@
 </header>
 
 <main>
+
+  <!-- Tablero -->
   <div class="board-wrap">
     <canvas id="board"></canvas>
 
+    <!-- Pantalla de inicio -->
     <div class="overlay" id="ov-start">
       <div class="overlay-title">TETRIS</div>
       <div class="overlay-sub">Apila líneas, sube de nivel</div>
       <button class="btn-play" onclick="startGame()">Jugar</button>
     </div>
 
+    <!-- Pantalla de Game Over -->
     <div class="overlay hidden" id="ov-gameover">
       <div class="overlay-title">Game Over</div>
       <div class="overlay-score-big" id="ov-score">0</div>
@@ -32,23 +35,23 @@
       <button class="btn-play" onclick="startGame()">Jugar de nuevo</button>
     </div>
 
+    <!-- Pantalla de Pausa -->
     <div class="overlay hidden" id="ov-pause">
       <div class="overlay-title">Pausa</div>
       <div class="overlay-sub">Presiona P para continuar</div>
     </div>
   </div>
 
+  <!-- Panel lateral -->
   <div class="side">
     <div class="card">
       <div class="card-label">Puntos</div>
       <div class="card-value accent" id="score">0</div>
     </div>
-
     <div class="card">
       <div class="card-label">Nivel</div>
       <div class="card-value" id="level">1</div>
     </div>
-
     <div class="card">
       <div class="card-label">Líneas</div>
       <div class="card-value" id="lines">0</div>
@@ -66,31 +69,17 @@
     <div class="card">
       <div class="card-label">Controles</div>
       <div class="controls-list">
-        <div class="ctrl-row">
-          <span class="ctrl-action">Mover</span>
-          <span class="kbd">← →</span>
-        </div>
-        <div class="ctrl-row">
-          <span class="ctrl-action">Rotar</span>
-          <span class="kbd">↑</span>
-        </div>
-        <div class="ctrl-row">
-          <span class="ctrl-action">Bajar</span>
-          <span class="kbd">↓</span>
-        </div>
-        <div class="ctrl-row">
-          <span class="ctrl-action">Caída</span>
-          <span class="kbd">SPC</span>
-        </div>
-        <div class="ctrl-row">
-          <span class="ctrl-action">Pausa</span>
-          <span class="kbd">P</span>
-        </div>
+        <div class="ctrl-row"><span class="ctrl-action">Mover</span><span class="kbd">← →</span></div>
+        <div class="ctrl-row"><span class="ctrl-action">Rotar</span><span class="kbd">↑</span></div>
+        <div class="ctrl-row"><span class="ctrl-action">Bajar</span><span class="kbd">↓</span></div>
+        <div class="ctrl-row"><span class="ctrl-action">Caída</span><span class="kbd">SPC</span></div>
+        <div class="ctrl-row"><span class="ctrl-action">Pausa</span><span class="kbd">P</span></div>
       </div>
     </div>
   </div>
+
 </main>
 
-<script src="script.js"></script>
+<script src="game.js"></script>
 </body>
 </html>
